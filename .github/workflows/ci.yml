@@ -7,7 +7,7 @@ on:
     branches: [ master, develop ]
 
 jobs:
-  pre_job:
+  check_skip:
     runs-on: ubuntu-latest
     outputs:
       should_skip: ${{ steps.skip_check.outputs.should_skip }}
@@ -19,7 +19,7 @@ jobs:
           skip_after_successful_duplicate: 'true'
 
   build:
-    needs: pre_job
+    needs: check_skip
     if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
     runs-on: ubuntu-latest
     steps:

@@ -14,7 +14,7 @@ buildscript {
 
 plugins {
     application
-    kotlin("jvm") version "1.4.21"
+    kotlin("jvm")
     id("org.jlleitschuh.gradle.ktlint")
 }
 
@@ -24,7 +24,6 @@ version = "0.0.1-SNAPSHOT"
 repositories {
     mavenLocal()
     jcenter()
-    maven { url = uri("https://kotlin.bintray.com/ktor") }
 }
 
 dependencies {
